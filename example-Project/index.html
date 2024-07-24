@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StopWatch Type</title>
+</head>
+<body>
+    <button id="btn1">start</button>
+    <button id="btn2">stop</button>
+    <button id="btn3">restart</button>
+    
+</body>
+<script>
+    const btn1=document.querySelector('#btn1')
+    const btn2=document.querySelector('#btn2')
+    const btn3=document.querySelector('#btn3')
+    
+    let a=0;
+    const increase=()=>{
+        console.log(a)
+        a=a+1
+    }
+
+    btn3.addEventListener('click',()=>{   // restart
+        a=0;
+        stop=clearInterval(start)
+    })
+
+    let start;
+    btn1.addEventListener('click',()=>{
+        //start=setInterval(increase,1000,a) // here it is pass by value so (it increase in copied value not in exact value)
+
+        start=setInterval(increase,1000)
+    })
+
+    btn2.addEventListener('click',()=>{
+       let stop=clearInterval(start)
+    })
+</script>
+</html>
